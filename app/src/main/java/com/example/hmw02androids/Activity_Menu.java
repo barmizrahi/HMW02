@@ -56,7 +56,7 @@ public class Activity_Menu extends AppCompatActivity {
 
     /* access modifiers changed from: private */
     public void startGame(String id, String data) {
-        String state = data.split(",")[Integer.valueOf(String.valueOf(id.charAt(7))).intValue()];
+        String state = data.split(",")[Integer.valueOf(String.valueOf(id.charAt(id.length()-1))).intValue()];
         Intent intent = new Intent(getBaseContext(), Activity_Game.class);
         intent.putExtra(Activity_Game.EXTRA_ID, id);
         intent.putExtra(Activity_Game.EXTRA_STATE, state);

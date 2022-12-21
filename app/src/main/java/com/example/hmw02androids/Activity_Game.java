@@ -1,5 +1,6 @@
 package com.example.hmw02androids;
 
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -20,15 +21,17 @@ public class Activity_Game extends AppCompatActivity {
         setContentView((int) R.layout.activity_game);
         String id = getIntent().getStringExtra(EXTRA_ID);
         if (id.length() == this.steps.length) {
-            int i = 0;
-            while (true) {
-                int[] iArr = this.steps;
-                if (i >= iArr.length) {
-                    break;
-                }
+           // int i = 0;
+            int[] iArr = this.steps;
+            for(int i=0;i<id.length();i++)
+            //while (true) {
+                //int[] iArr = this.steps;
+               // if (i >= iArr.length) {
+                 //   break;
+                //}
                 iArr[i] = Integer.valueOf(String.valueOf(id.charAt(i))).intValue() % 4;
-                i++;
-            }
+                //i++;
+          //  }
         }
         findViews();
         initViews();
